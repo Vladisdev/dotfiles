@@ -29,6 +29,7 @@ theme_dir="$HOME/.oh-my-zsh/custom/themes/powerlevel10k"
 [[ -d "$theme_dir" ]] || git clone --depth=1 https://github.com/romkatv/powerlevel10k.git "$theme_dir"
 
 export NVM_DIR="$HOME/.config/nvm"
+mkdir -p "$NVM_DIR"
 if [[ ! -s "$NVM_DIR/nvm.sh" ]]; then
   curl -fsSL https://raw.githubusercontent.com/nvm-sh/nvm/v0.40.4/install.sh | PROFILE=/dev/null bash
 fi
