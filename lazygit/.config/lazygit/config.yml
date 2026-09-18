@@ -1,0 +1,5 @@
+# LazyGit reads this file from ~/.config/lazygit/config.yml.
+# Install a Nerd Font in Windows Terminal so file and git icons render correctly.
+gui:
+  nerdFontsVersion: "3"
+  showRandomTip: false

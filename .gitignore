@@ -1,0 +1,13 @@
+# Secrets and machine-local state must never be committed.
+.env
+.env.*
+!.env.example
+*.pem
+*.key
+*.crt
+*.token
+*.log
+**/data/
+**/cache/
+**/.DS_Store
+**/.zcompdump*
