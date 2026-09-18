@@ -2,7 +2,7 @@
 
 Переносимая конфигурация WSL/Ubuntu для zsh, Powerlevel10k, LazyVim и LazyGit.
 
-Полный стартовый гайд — в [docs/WORKSTATION.md](docs/WORKSTATION.md): WSL2, Docker, Go, Node, Neovim, LazyGit и первый запуск.
+Полный стартовый гайд — в [docs/WORKSTATION.md](docs/WORKSTATION.md): WSL2, Docker, Go, Neovim, LazyGit и первый запуск.
 
 ## Состав
 

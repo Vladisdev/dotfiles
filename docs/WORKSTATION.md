@@ -29,7 +29,7 @@ chsh -s "$(command -v zsh)"
 exec zsh -l
 ```
 
-`bootstrap-ubuntu.sh` ставит пакеты Ubuntu, Oh My Zsh, Powerlevel10k и его плагины, nvm с актуальным Node LTS, актуальные Go, Neovim и LazyGit. Свежие Go/Neovim/LazyGit устанавливаются в `~/.local`, поэтому не требуют глобальных каталогов и не конфликтуют с системными пакетами.
+`bootstrap-ubuntu.sh` ставит пакеты Ubuntu, Oh My Zsh, Powerlevel10k и его плагины, актуальные Go, Neovim и LazyGit. Свежие Go/Neovim/LazyGit устанавливаются в `~/.local`, поэтому не требуют глобальных каталогов и не конфликтуют с системными пакетами.
 
 `install.sh` бережно переносит прежние `.zshrc`, `.p10k.zsh`, `.gitconfig`, `~/.config/lazygit` и `~/.config/nvim` в `~/.dotfiles-backup/<дата-время>/`, после чего создаёт симлинки через GNU Stow. Машинные значения — токены, локальные aliases и личные пути — держи в `~/.zshrc.local`; этот файл не отслеживается Git.
 
@@ -42,7 +42,6 @@ zsh --version
 nvim --version
 lazygit --version
 go version
-node --version
 docker version
 ```
 
@@ -91,9 +90,9 @@ exit
 
 ## 4. Набор инструментов
 
-Bootstrap уже содержит Git, curl/wget, build-essential, ripgrep, fd, fzf, jq, tmux, zoxide, direnv, архиваторы и доступ к буферу обмена WSL. Он покрывает LazyVim, LazyGit, Go и фронтенд.
+Bootstrap уже содержит Git, curl/wget, build-essential, ripgrep, fd, fzf, jq, tmux, zoxide, direnv, архиваторы и доступ к буферу обмена WSL. Он покрывает LazyVim, LazyGit и Go.
 
-Ставь проектные зависимости в самом проекте: `go install` для Go CLI, `npm install`/`pnpm install` для Node, `docker compose up` для контейнерных сервисов. Для Node соблюдай `.nvmrc`, если он есть: `nvm install && nvm use`.
+Ставь проектные зависимости в самом проекте: `go install` для Go CLI и `docker compose up` для контейнерных сервисов.
 
 Дополнительно по необходимости:
 
@@ -125,11 +124,8 @@ git pull --ff-only
 # Neovim
 nvim '+Lazy update' '+MasonUpdate' '+qa'
 
-# Node LTS
-nvm install --lts
-nvm alias default 'lts/*'
 ```
 
 Плагины LazyVim фиксируются в `lazy-lock.json`: после осознанного `:Lazy update` коммить изменённый lock-файл. Обновление Go, Neovim и LazyGit можно выполнить, удалив их пользовательский бинарник/каталог и повторив соответствующий блок bootstrap-скрипта; конфиги от этого не теряются.
 
-Официальные ссылки: [WSL](https://learn.microsoft.com/windows/wsl/install), [Docker Desktop + WSL](https://docs.docker.com/desktop/features/wsl/), [Docker Engine для Ubuntu](https://docs.docker.com/engine/install/ubuntu/), [Go](https://go.dev/doc/install), [Neovim](https://github.com/neovim/neovim/wiki/Installing-Neovim), [LazyVim](https://www.lazyvim.org/installation), [LazyGit](https://github.com/jesseduffield/lazygit#installation), [nvm](https://github.com/nvm-sh/nvm#installing-and-updating).
+Официальные ссылки: [WSL](https://learn.microsoft.com/windows/wsl/install), [Docker Desktop + WSL](https://docs.docker.com/desktop/features/wsl/), [Docker Engine для Ubuntu](https://docs.docker.com/engine/install/ubuntu/), [Go](https://go.dev/doc/install), [Neovim](https://github.com/neovim/neovim/wiki/Installing-Neovim), [LazyVim](https://www.lazyvim.org/installation), [LazyGit](https://github.com/jesseduffield/lazygit#installation).

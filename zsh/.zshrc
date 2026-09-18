@@ -25,11 +25,6 @@ fi
 export GOPATH="${GOPATH:-$HOME/go}"
 export PATH="$GOPATH/bin:$PATH"
 
-# Node version manager (installed on demand by the bootstrap script).
-export NVM_DIR="${XDG_CONFIG_HOME:-$HOME/.config}/nvm"
-[[ -s "$NVM_DIR/nvm.sh" ]] && source "$NVM_DIR/nvm.sh"
-[[ -s "$NVM_DIR/bash_completion" ]] && source "$NVM_DIR/bash_completion"
-
 command -v zoxide >/dev/null 2>&1 && eval "$(zoxide init zsh)"
 command -v fdfind >/dev/null 2>&1 && ! command -v fd >/dev/null 2>&1 && alias fd='fdfind'
 
