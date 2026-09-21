@@ -12,5 +12,3 @@
 - `git/` — общие настройки Git без личных имени и e-mail;
 - `scripts/bootstrap-ubuntu.sh` — установка зависимостей на чистой Ubuntu;
 - `install.sh` — резервная копия старых файлов и deployment через GNU Stow.
-
-Не добавляй сюда `~/.ssh`, историю shell, `.env`, Docker credentials и токены. Для отличий конкретной машины используй `~/.zshrc.local`.
